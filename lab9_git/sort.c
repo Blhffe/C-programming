@@ -1,19 +1,16 @@
 #include <stdio.h>
 
-// Функция для обмена двух элементов
 void swap(int* a, int* b) {
     int t = *a;
     *a = *b;
     *b = t;
 }
 
-// Функция разбиения массива (схема Ломуто)
 int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Опорный элемент
-    int i = (low - 1);     // Индекс меньшего элемента
+    int pivot = arr[high]; 
+    int i = (low - 1);     
 
     for (int j = low; j <= high - 1; j++) {
-        // Если текущий элемент меньше или равен опорному
         if (arr[j] < pivot) {
             i++;
             swap(&arr[i], &arr[j]);
@@ -23,19 +20,15 @@ int partition(int arr[], int low, int high) {
     return (i + 1);
 }
 
-// Основная рекурсивная функция Quicksort
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
-        // pi — индекс разделения, arr[pi] теперь на правильном месте
         int pi = partition(arr, low, high);
 
-        // Рекурсивно сортируем элементы до и после разделения
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
     }
 }
 
-// Вспомогательная функция для вывода массива
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++)
         printf("%d ", arr[i]);
@@ -52,3 +45,4 @@ int main() {
     printArray(arr, n);
     return 0;
 }
+// it work
