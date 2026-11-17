@@ -35,13 +35,13 @@ void printArray(int arr[], int size) {
     printf("\n");
 }
 
-int main() {
-    int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    
-    quickSort(arr, 0, n - 1);
-    
-    printf("Отсортированный массив: \n");
-    printArray(arr, n);
+
+int main(){
+    int a[] = {12, 2, 4, 7, 0};
+    int N = sizeof(a) / sizeof(a[0]);
+
+    quickSort(a, 0, N-1);
+
+    printArray(a, N);
     return 0;
 }
